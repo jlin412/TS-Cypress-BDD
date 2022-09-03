@@ -1,27 +1,38 @@
 import LoginPage from '../../support/pageObjects/login_page';
+import SecureAreaPage from '../../support/pageObjects/secure_area_page';
+
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 /// <reference types="cypress" />
 
 describe('Test suite', () => {
-    Given('User has opened Oracle Profile page', () => {
-        Cypress.config('baseUrl', 'https://profile.oracle.com')
-        cy.visit('/')
+    Given('I have opened the login page', () => {
+        Cypress.config('baseUrl', 'http://the-internet.herokuapp.com')
+        cy.visit('/login')
     });
 
-    When('User inputs {string} as email', (email: string) => {
-        LoginPage.fillUserNameField(email);
+    Given('I nagivate to secure page directly', () => {
+        Cypress.config('baseUrl', 'http://the-internet.herokuapp.com')
+        cy.visit('/secure')
     });
 
-    When('User inputs {string} as password', (password: string) => {
-        LoginPage.fillPasswordField(password);
+    When('I login with username {string} and password {string}', (username: string, password: string) => {
+        LoginPage.login(username, password);
     });
 
-    When('User presses Sign In button', () => {
-        LoginPage.clickSubmitButton();
+    Then('I should see error message {string}', (error: string) => {
+        LoginPage.verifyErrorMessage(error);
     })
 
-    Then('User sees invalid credentials message', () => {
-        LoginPage.checkErrorMessage('Invalid username and/or password.');
+    Then('I should be on secure area page', () => {
+        SecureAreaPage.verifyLoginMessage();
     })
+
+    When('I login out', () => {
+        SecureAreaPage.logout();
+    });    
+
+    When('I should be on login page', () => {
+        LoginPage.verifyOnLoginPage();
+    });    
 })

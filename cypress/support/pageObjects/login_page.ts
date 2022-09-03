@@ -1,34 +1,45 @@
 /// <reference types="cypress" />
 const elements = {
-    userNameField: () => cy.get('#sso_username'),
-    passwordField: () => cy.get('#ssopassword'),
-    submitButton: () => cy.get('#signin_button'),
-    errorMessage: () => cy.get('#errormsg'),
+    userNameField: () => cy.get('#username'),
+    passwordField: () => cy.get('#password'),
+    submitButton: () => cy.get('Button').contains('Login'),
+    errorMessage: () => cy.get('#flash'),
+    pageHeader: () => cy.get('h2')
 
 }
 
 class LoginPage {
-    static fillUserNameField(username: string) {
+    static enterUsername(username: string) {
         elements.userNameField().type(username);
     }
 
-    static fillPasswordField(password: string) {
+    static enterPassword(password: string) {
         elements.passwordField().type(password);
     }
 
-    static clickSubmitButton() {
+    static submit() {
         elements.submitButton().click({ force: true });
     }
 
     static login(username: string, password: string) {
-        this.fillUserNameField(username);
-        this.fillPasswordField(password);
-        this.clickSubmitButton();
+        if (username !== '') {
+            this.enterUsername(username);
+        }
+        if (password !== '') {
+            this.enterPassword(password);
+        }
+        this.submit();
     }
 
-    static checkErrorMessage(errorMsg: string) {
+    static verifyErrorMessage(errorMsg: string) {
         elements.errorMessage().invoke('text').then((text: string) => {
             expect(text).to.include(errorMsg);
+        })
+    }
+
+    static verifyOnLoginPage() {
+        elements.pageHeader().invoke('text').then((text: string) => {
+            expect(text).to.include('Login Page');
         })
     }
 }
