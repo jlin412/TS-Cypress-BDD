@@ -1,5 +1,4 @@
 node_modules
-jenkins
 package-lock.json
 allure-results
 cypress/support/videos
