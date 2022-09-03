@@ -1,6 +1,6 @@
 {
     "baseUrl": "https://profile.oracle.com",
     "testFiles": "**/*.feature",
-    "screenshotOnRunFailure": false,
-    "video": false
+    "screenshotOnRunFailure": true,
+    "video": true
 }
