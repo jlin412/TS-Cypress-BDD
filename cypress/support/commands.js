@@ -24,12 +24,12 @@ import token from '../fixtures/token.json'
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.overwrite('request', (originalFn, options) => {
-    options.url = Cypress.config('baseUrl')
-    options.headers = {
-        Authorization: `Bearer ${token.token}`,
-        contentType: 'application/json',
-    };
+// Cypress.Commands.overwrite('request', (originalFn, options) => {
+//     options.url = Cypress.config('baseUrl')
+//     options.headers = {
+//         Authorization: `Bearer ${token.token}`,
+//         contentType: 'application/json',
+//     };
   
-    return originalFn(options);
-  });
+//     return originalFn(options);
+//   });
