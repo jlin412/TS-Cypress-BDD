@@ -16,9 +16,9 @@
 
 ## Locally on your machine
 ### Installation
-1. Install [Node.js](https://nodejs.org/en/).
+1. Install [Node.js](https://nodejs.org/en/). 12+
 1. Install [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
-1. Download the project.
+1. `git clone` the project.
 1. Install dependencies with a terminal command `yarn install` or `npm install` in the project's root folder.
 1. Additional step: You need to install [Allure](https://github.com/allure-framework/allure2), if you want to use it.
 
