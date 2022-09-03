@@ -1,13 +1,12 @@
-
 {
     "cucumberautocomplete.steps": [
         "cypress/integration/**/*.{js,ts}",
     ],
-    "cucumberautocomplete.syncfeatures": "test/features/*feature",
-    "cucumberautocomplete.strictGherkinCompletion": true,
-    "cucumberautocomplete.strictGherkinValidation": true,
+    "cucumberautocomplete.syncfeatures": "**/*.feature",
+    "cucumberautocomplete.strictGherkinCompletion": false,
+    "cucumberautocomplete.strictGherkinValidation": false,
     "cucumberautocomplete.smartSnippets": true,
-    "cucumberautocomplete.stepsInvariants": true,
+    "cucumberautocomplete.stepsInvariants": false,
     "cucumberautocomplete.customParameters": [
         {
             "parameter":"{ab}",
@@ -19,9 +18,9 @@
         },
     ],
     "cucumberautocomplete.pages": {
-        "users": "test/features/page_objects/users.storage.js",
-        "pathes": "test/features/page_objects/pathes.storage.js",
-        "main": "test/features/support/page_objects/main.page.js"
+        // "users": "test/features/page_objects/users.storage.js",
+        // "pathes": "test/features/page_objects/pathes.storage.js",
+        // "main": "test/features/support/page_objects/main.page.js"
     },
     "cucumberautocomplete.skipDocStringsFormat": true,
     "cucumberautocomplete.formatConfOverride": {
