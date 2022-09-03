@@ -1,13 +1,13 @@
-Feature: Login
+Feature: Login functionality
 
-  Scenario: valid user login
+  Scenario: Valid user login
     Given I have opened the login page
     When I login with username "tomsmith" and password "SuperSecretPassword!"
     Then I should be on secure area page
     When I login out
     Then I should be on login page
 
-  Scenario Outline: Invalid sign in with user
+  Scenario Outline: Invalid sign in with username "<Username>" and password "<Password>"
     Given I have opened the login page
     When I login with username "<Username>" and password "<Password>"
     Then I should see error message "<Error>"
