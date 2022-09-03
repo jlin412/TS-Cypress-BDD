@@ -1,7 +1,7 @@
 # TS-Cypress-BDD
 
 ### About
-**Overview:** _TypeScript UI and API with BDD testing framework sample._
+**Overview:** _TypeScript UI and API with BDD testing framework
 
 **Systems under test:**
 - UI: [herokuapp login application](http://the-internet.herokuapp.com/login).
