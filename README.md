@@ -33,3 +33,9 @@
 - Framework creates allure reports, that located in `allure-results` folder.
 - Check the `Running tests` section to get more info about working with Allure reports.
 - **Note: Allure folder would be cleared within the next test run.**
+
+### Test Design Consideration
+* All individual scenario can be executed indepedently
+* For api test:
+** If an resource is not available, 404 is assumed according to swapper documentation.
+** Some of operations are testd in combination in functional test cases (use cases of the api)
