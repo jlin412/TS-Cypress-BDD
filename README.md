@@ -35,7 +35,7 @@
 - **Note: Allure folder would be cleared within the next test run.**
 
 ### Test Design Consideration
-* All individual scenario can be executed indepedently
-* For api test:
-** If an resource is not available, 404 is assumed according to swapper documentation.
-** Some of operations are testd in combination in functional test cases (use cases of the api)
+- All individual scenario can be executed indepedently
+- For api test:
+-- If an resource is not available, 404 is assumed according to swapper documentation.
+-- Some of operations are testd in combination in functional test cases (use cases of the api)
