@@ -23,7 +23,7 @@
 1. Additional step: You need to install [Allure](https://github.com/allure-framework/allure2), if you want to use it.
 
 ### Running tests
-1. Launch `java -jar studentmgmt-0.0.1-SNAPSHOT.jar` with `yarn cy:api-setup` before running any api tests 
+1. Launch `java -jar studentmgmt-0.0.1-SNAPSHOT.jar` with `yarn cy:api-setup` in new terminal before running any api tests 
 1. You can use Cypress GUI with `yarn cy:ui` command to execute individual feature and debug
 1. As well, you can start test suite with `yarn cy:headless` command.
 1. Also, you can start the suite and generate Allure report with `yarn cy:allure` and after it, open it with `yarn allure:open`.
